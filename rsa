@@ -1,5 +1,7 @@
+#!/usr/bin/python3
 
-m fractions import gcd
+
+from fractions import gcd
 from sys import argv
 
 
@@ -12,7 +14,7 @@ def pollards_rho(n):
         x = f(x)
         y = f(f(y))
         d = gcd(abs(x - y), n)
- if d != n:
+    if d != n:
         return d
 
 
@@ -21,7 +23,7 @@ def read_file():
         for number in f:
             num = int(number)
             if num % 2 == 0:
-    print("{:d}={}*{}".format(num, num // 2, 2))
+                print("{:d}={}*{}".format(num, num // 2, 2))
             else:
                 p = pollards_rho(num)
                 f1 = p
